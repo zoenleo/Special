@@ -1,0 +1,22 @@
+{
+  "name": "special",
+  "version": "1.0.0",
+  "description": "Special effect collect.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoenleo/Special.git"
+  },
+  "author": "zoenleo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zoenleo/Special/issues"
+  },
+  "homepage": "https://github.com/zoenleo/Special#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

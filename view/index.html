@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>特效集</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/rain.js"></script>
+</head>
+<body>
+    <h1 class="h1">个人特效集</h1>
+    <div id="rotate" class="article">
+        <h3 class="title">旋转特效 css</h3>
+        <div class="content">
+            <img class="rotate" src="./assets/avatar.jpeg" alt="">
+        </div>
+    </div>
+    <div id="rain" class="article">
+        <h3 class="title">下雨特效 canvas</h3>
+        <div class="content">
+            <canvas class="canvas"></canvas>
+        </div>
+        <script>
+            var image = new Image()
+            image.onload = function() {
+                var engine = new RainyDay(document.getElementById("canvas"), {
+                    image: this,
+                    parentElement: document.getElementById("rain").getElementsByClassName('content')[0],
+                    width: 300,
+                    height: 300,
+                    opacity: 1
+                });
+                engine.rain([ [1, 2, 200] ]);
+                engine.rain([ [3, 3, 0.88], [5, 5, 0.9], [6, 2, 1] ], 100);
+            };
+            image.crossOrigin = 'anonymous';
+            image.src = "./assets/avatar.jpeg"
+        </script>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+</html>
