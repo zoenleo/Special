@@ -3,7 +3,7 @@
  * Copyright (c) 2014 Marek Brodziak
  * Licensed under the GPLv2 license
  */
-function RainyDay(b, a) {
+function RainyDay(a, b) {
     if (this === window) return new RainyDay(a);
     this.img = a.image;
     var c = {
@@ -54,8 +54,8 @@ RainyDay.prototype.prepareCanvas = function () {
     null !== window.onresize ? window.setInterval(this.checkSize.bind(this), 100) : (window.onresize = this.checkSize.bind(
         this), window.onorientationchange = this.checkSize.bind(this))
 }, RainyDay.prototype.checkSize = function () {
-    var a = this.img.clientWidth,
-        b = this.img.clientHeight,
+    var a = this.options.width || this.img.clientWidth,
+        b = this.options.height || this.img.clientHeight,
         c = this.img.offsetLeft,
         d = this.img.offsetTop,
         e = this.canvas.width,

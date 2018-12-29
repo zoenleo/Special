@@ -19,12 +19,11 @@
     <div id="rain" class="article">
         <h3 class="title">下雨特效 canvas</h3>
         <div class="content">
-            <canvas class="canvas"></canvas>
         </div>
         <script>
             var image = new Image()
             image.onload = function() {
-                var engine = new RainyDay(document.getElementById("canvas"), {
+                var engine = new RainyDay({
                     image: this,
                     parentElement: document.getElementById("rain").getElementsByClassName('content')[0],
                     width: 300,
