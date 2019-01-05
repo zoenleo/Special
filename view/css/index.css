@@ -93,3 +93,97 @@ body,
         margin-right: 0;
     }
 }
+
+/* css检测是否支持 */
+
+@supports (display: flex) {
+    #supports .supports {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    #supports .supports div {
+        width: 30%;
+        height: 100px;
+        margin: 10px;
+    }
+    #supports .supports div:first-child{
+        background-image: linear-gradient(to right, red 20%, green 40%, blue);
+    }
+    #supports .supports div:nth-child(2){
+        background-image: repeating-linear-gradient(180deg, red 10%, green 20%);
+    }
+    #supports .supports div:nth-child(3){
+        background-image: linear-gradient(180deg, red 20%, green 20%);
+    }
+    #supports .supports div:nth-child(4){
+        background-image: radial-gradient(circle, red 10%, green 20%, blue);
+    }
+    #supports .supports div:nth-child(5){
+        background-image: repeating-radial-gradient(circle, red 10%, green 20%);
+    }
+    #supports .supports div:nth-child(6){
+        background-image: radial-gradient(ellipse closest-corner at center, red 10%, green 20%);
+    }
+    #supports .supports div:last-child{
+        background-image: repeating-radial-gradient(ellipse closest-corner at center, red 10%, green 20%);
+    }
+}
+
+/* css 变量使用 */
+
+#hover-button .hover-button{
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid rgb(243, 81, 52);
+    background-color: rgb(243, 81, 52);
+    color: #fff;
+    font-size: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#hover-button .hover-button::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    box-shadow: 0 0 0 0 rgba(44, 05, 166, 1);
+}
+
+#hover-button .hover-button:hover::after {
+    left: var(--x,1);
+    top: var(--y,1);
+    /* background: radial-gradient(circle closest-side, #4405f7, transparent);
+    transform: translate(-50%, -50%);
+    transition: width .2s ease, height .2s ease;
+    width: 200px;
+    height: 200px; */
+    box-shadow: 0 0 150px 50px #4405f7;
+    transition: box-shadow .2s ease;
+}
+
+/* css label */
+#attr .attr{
+    position: relative;
+}
+
+#attr .attr::before {
+    content: attr(data-label)'：';
+    padding-left: 100px;
+}
+
+/* css 计算器 */
+#counter .counter {
+    /* counter-reset: characters; */
+    counter-reset: characters 10;
+}
+#counter .counter input:checked {
+    /* counter-increment: characters; */
+    counter-increment: characters 3;
+}
+#counter .total::after {
+    content: counter(characters);
+} 

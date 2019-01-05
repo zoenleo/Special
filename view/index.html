@@ -37,6 +37,58 @@
             image.src = "./assets/avatar.jpeg"
         </script>
     </div>
+    <div id="supports" class="article">
+        <h3 class="title">检测是否支持 css</h3>
+        <div class="content">
+            <div class='supports'>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div id="hover-button" class="article">
+        <h3 class="title">hover渐变button css</h3>
+        <div class="content">
+            <div class="hover-button">hover surprise me</div>
+        </div>
+        <script>
+            document.querySelector('.hover-button').onmousemove = (e) => {
+                const x = e.offsetX
+                const y = e.offsetY
+                e.target.style.setProperty('--x', `${ x }px`)
+                e.target.style.setProperty('--y', `${ y }px`)
+            }
+        </script>
+    </div>
+    <div id="attr" class="article">
+        <h3 class="title">attr css</h3>
+        <div class="content">
+            <div class='attr' data-label='label'>这个是父标签</div>
+        </div>
+    </div>
+    <div id="counter" class="article">
+        <h3 class="title">counter css</h3>
+        <div class="content">
+            <div class="counter">  
+                <input id="c" type="checkbox"><label for="c">C</label>
+                <input id="C++" type="checkbox"><label for="C++">C++</label>
+                <input id="C#" type="checkbox"><label for="C#">C#</label>
+                <input id="Java" type="checkbox"><label for="Java">Java</label>
+                <input id="JavaScript" type="checkbox"><label for="JavaScript">JavaScript</label>
+                <input id="PHP" type="checkbox"><label for="PHP">PHP</label>
+                <input id="Python" type="checkbox"><label for="Python">Python</label>
+                <input id="Ruby" type="checkbox"><label for="Ruby">Ruby</label>
+            </div>
+            <p class="total">  
+                Total selected:
+            </p>
+        </div>
+    </div>
     <script src="./js/index.js"></script>
 </body>
 </html>
