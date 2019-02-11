@@ -187,3 +187,99 @@ body,
 #counter .total::after {
     content: counter(characters);
 } 
+/* css 图形 */
+
+#css-graph .css-curved-arrow {
+    position: relative;
+    width: 0;
+    border-top: 90px solid transparent;
+    border-right: 90px solid red;
+    transform: rotate(10deg) translateX(100%);
+}
+#css-graph .css-curved-arrow::after {
+    content: "";
+    position: absolute;
+    border: 0 solid transparent;
+    border-top: 30px solid red;
+    border-radius: 200px 0 0 0;
+    top: -120px; left: -90px;
+    width: 120px; height: 120px;
+    transform: rotate(45deg);
+}
+
+#css-graph .css-heart {
+    position: relative;
+    width: 100px; height: 90px;
+}
+#css-graph .css-heart:before,
+#css-graph .css-heart:after {
+    position: absolute;
+    content: "";
+    left: 50px; top: 0;
+    width: 50px; height: 80px;
+    background: red;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+#css-graph .css-heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+#css-graph .css-infinity {
+    position: relative;
+    width: 212px; height: 100px;
+    box-sizing: content-box;
+}
+#css-graph .css-infinity:before,
+#css-graph .css-infinity:after {
+    content: "";
+    box-sizing: content-box;
+    position: absolute;
+    top: 0; left: 0;
+    width: 60px; height: 60px;
+    border: 20px solid red;
+    border-radius: 50px 50px 0 50px;
+    transform: rotate(-45deg);
+}
+#css-graph .css-infinity:after {
+    left: auto; right: 0;
+    border-radius: 50px 50px 50px 0;
+    transform: rotate(45deg);
+}
+
+
+#css-graph .css-yin-yang {
+    box-sizing: content-box;
+    width: 96px; height: 48px;
+    background: #eee;
+    border-color: red;
+    border-style: solid;
+    border-width: 2px 2px 50px 2px;
+    border-radius: 100%;
+    position: relative;
+}
+#css-graph .css-yin-yang:before {
+    box-sizing: content-box;
+    content: "";
+    position: absolute;
+    top: 50%; left: 0;
+    background: #fff;
+    border: 18px solid red;
+    border-radius: 100%;
+    width: 12px; height: 12px;
+}
+#css-graph .css-yin-yang:after {
+    box-sizing: content-box;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: red;
+    border: 18px solid #eee;
+    border-radius: 100%;
+    width: 12px;
+    height: 12px;
+}
